@@ -1,0 +1,1378 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    
+<!-- Mirrored from mis.utb.ac.rw/application_ug.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 May 2023 08:47:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8">
+
+        <title>UTBMIS</title>
+
+        <meta name="description" content="UTB MIS">
+        <meta name="author" content="">
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="https://mis.utb.ac.rw/img/icon57.png">
+
+        <!-- END Icons -->
+
+        <!-- Stylesheets -->
+        <!-- Bootstrap is included in its original form, unaltered -->
+        <link rel="stylesheet" href="https://mis.utb.ac.rw/css/bootstrap.min.css">
+
+        <!-- Related styles of various icon packs and plugins -->
+		<!--        <link rel="stylesheet" href="css_back/plugins.css">-->
+		<link rel="stylesheet" href="https://mis.utb.ac.rw/backend/css/plugins.css">
+
+        <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+        <link rel="stylesheet" href="https://mis.utb.ac.rw/css/main.css?1.0">
+
+        <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+        <link rel="stylesheet" href="https://mis.utb.ac.rw/css/themes.css">
+        <!-- END Stylesheets -->
+
+        <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
+        <!--<script src="js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>!-->
+    </head>
+    <body><!-- Page Container -->
+<!-- In the PHP version you can set the following options from inc/config file -->
+<!-- 'boxed' class for a boxed layout -->
+<div id="page-container" >
+    <!-- Site Header -->
+    <header style="background-color:#006620;">
+        <div class="container">
+            <!-- Site Logo -->
+            <a href="https://mis.utb.ac.rw/" class="site-logo">
+                <i class="gi"><img src="https://mis.utb.ac.rw/img/logo_ok.png" /></i>&nbsp;&nbsp;
+                <strong>MIS</strong>
+            </a>
+
+
+            <!-- Site Navigation -->
+            <nav>
+                <!-- Menu Toggle -->
+                <!-- Toggles menu on small screens -->
+                <a href="javascript:void(0)" class="btn btn-default site-menu-toggle visible-xs visible-sm">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- END Menu Toggle -->
+
+                <!-- Main Menu -->
+                                <ul class="site-nav">
+                    <!-- Toggles menu on small screens -->
+                    <li class="visible-xs visible-sm">
+                        <a href="javascript:void(0)" class="site-menu-toggle text-center">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </li>
+                    <!-- END Menu Toggle -->
+                                        <li>
+                        <a href="https://mis.utb.ac.rw/index.php" ><span class="fa fa-home"></span> Home</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/application_ug.php"  class="active"><span class="fa fa-graduation-cap"></span> Student Application</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/tracking.php" ><span class="fa fa-user"></span> Tracking</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/SdntEntrc.php" ><span class="fa fa-share"></span> Student Entrance</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/login.php" ><span class="fa fa-lock"></span> Login</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/vtp" ><span class="fa fa-lock"></span> VTP-Login</a>
+                                                </li>
+                                            <li>
+                        <a href="javascript:void(0)" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/graduants.php" >List of Graduands</a>
+                                                </li>
+                                        </ul>
+                                <!-- END Main Menu -->
+            </nav>
+            <!-- END Site Navigation -->
+        </div>
+    </header>
+    <!-- END Site Header -->
+<script src="https://mis.utb.ac.rw/js/vendor/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#val_institution").change(function() {
+        $(this).after('<div id="loader"></div>');
+        $.get('https://mis.utb.ac.rw/load_input_institution.php?ver=' + $(this).val(), function(data) {
+            $("#sub_cat").html(data);
+            $('#loader').slideUp(200, function() {
+                $(this).remove();
+            });
+        });
+    });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#PrgType").change(function() {
+        $(this).after(
+            '<div id="loader"><img src="img/loading.gif" alt="loading...." width="30" height="30" /></div>'
+            );
+        $.get('https://mis.utb.ac.rw/load_Active_Intakes.php?PrgType=' + $(this).val(), function(data) {
+            $("#display_intakes").html(data);
+            $('#loader').slideUp(910, function() {
+                $(this).remove();
+            });
+        });
+    });
+
+});
+</script>
+
+
+
+<style>
+#info3 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info4 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info5 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+
+#info6 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info7 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info8 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+
+
+
+#info9 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info10 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info11 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+
+
+
+#info12 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info13 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info14 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+
+
+#info15 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info16 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info17 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+
+#info18 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info19 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+
+#info20 {
+    display: none;
+    width: 100%;
+    height: 35px;
+    background: red;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    size: 12px;
+}
+</style>
+
+
+<section class="site-section-light" id="Sectn">
+
+    <div class="container">
+        <center>
+            <h3 class="text-center animation-slideDown"> <b> UTB STUDENT APPLICATION</b></h3>
+        </center>
+    </div>
+</section>
+<section class="site-content">
+    <div class="container application">
+        <!-- form with Validation Content -->
+        <div class="block">
+            <form id="advanced-wizard" action="https://mis.utb.ac.rw/LoadAplctnDtls.php" method="post" class="form-horizontal form-bordered "
+                enctype="multipart/form-data">
+                <input type="hidden" name="table" value="">
+                <!-- First Step Applicant info -->
+                <div id="clickable-first" class="step">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <ul class="nav nav-pills nav-justified clickable-steps">
+                                <li class="active"><a href="javascript:void(0)"
+                                        data-gotostep="clickable-first"><strong>1. Applicant info</strong></a></li>
+                                <li><a href="javascript:void(0)" data-gotostep="clickable-second"><strong>2. Academic
+                                            info</strong></a></li>
+                                <li><a href="javascript:void(0)" data-gotostep="clickable-third"><strong>3. Supporting
+                                            documents</strong></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END Step Info -->
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="val_family_name">Surname (Family name) <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" id="val_family_name" name="val_family_name" class="form-control"
+                                    placeholder="Your family name.." required="required">
+                                <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                            </div>
+                            <b id="info3" style="padding-left:5px;padding-right:5px;width:100%;font-size:11px;">
+                                Required
+                            </b>
+                        </div>
+
+                        <label class="col-md-2 control-label" for="val_first_name">First name <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" id="val_first_name" name="val_first_name" class="form-control"
+                                    placeholder="first name" required>
+                                <span class="input-group-addon"><i class="gi gi-user"></i></span>
+
+                                <input type="hidden" id="val_track" name="val_track" class="form-control"
+                                    value="p8oti3ji">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+
+
+                        <label class="col-md-2 control-label" for="val_family_name">Gender <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <select id="sex" name="sex" class="select-select2" style="width: 100%;"
+                                data-placeholder="Choose one.." required>
+                                <option value=""></option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </div>
+
+                        <label class="col-md-2 control-label" for="val_first_name">Date of birth <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <input type="date" id="date_of_birth" style="width: 100%;" name="date_of_birth"
+                                class="form-control input-datepicker" data-date-format="yyyy-mm-dd"
+                                placeholder="yyyy-mm-dd" required>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-md-2 control-label" for="val_family_name">Phone number <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <input type="text" id="phone" name="phone" class="form-control"
+                                placeholder="Your phone number.." required>
+
+                            <span style="font-size:10px;color:#333;">E.g: +250788100000</span>
+                        </div>
+
+                        <label class="col-md-2 control-label" for="val_family_name">E-mail <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="Your e-mail address.." required>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END First Step applicant info -->
+
+                <!-- Second Step academic info-->
+                <div id="clickable-second" class="step">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+
+                            <ul class="nav nav-pills nav-justified clickable-steps">
+                                <li><a href="javascript:void(0)" data-gotostep="clickable-first"><strong>1. Applicant
+                                            info</strong></a></li>
+                                <li class="active"><a href="javascript:void(0)"
+                                        data-gotostep="clickable-second"><strong>2. Academic info</strong></a></li>
+                                <li><a href="javascript:void(0)" data-gotostep="clickable-third"><strong>3. Supporting
+                                            documents</strong></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END Step Info  -->
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="val_major">What did you study in Secondary
+                            School?<span class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <input type="text" id="val_major" name="val_major" class="form-control"
+                                placeholder="eg: PCM, MPEG, MEG, ..." required>
+                        </div>
+
+
+                        <label class="col-md-2 control-label" for="campus">Choose the Campus <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <select id="campus" name="campus" class="select-select2" style="width: 100%;"
+                                data-placeholder="Choose one.." required>
+                                <option value=""></option>
+                                                                <option value="2">GISENYI</option>
+                                                                <option value="1">KIGALI</option>
+                                                            </select>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="form-group">
+
+
+                        <label class="col-md-2 control-label" for="val_level">Choose the Level <span
+                                class="text-danger">*</span></label>
+                        <div class="col-md-3">
+                            <select id="val_level" name="val_level" class="select-select2" style="width: 100%;"
+                                data-placeholder="Choose one.." required>
+                                <option value=""></option>
+                                <!-- select levels in db -->
+                                                                <option value="1">Level 1                                </option>
+
+                                                            </select>
+                        </div>
+
+                        <label class="col-md-2 control-label" for="campus">Which program Type do you want to study
+                            :<span class="text-danger"></span></label>
+                        <div class="col-md-3">
+
+                            <select id="PrgType" name="PrgType" class="select-select2" style="width: 100%;"
+                                data-placeholder="Choose one.." required>
+                                <option value=""></option>
+                                                                <option value="1">
+                                    Under Graduate</option>
+                                                            </select>
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <div id="display_intakes"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!--div class="form-group">
+										<label class="col-md-2 control-label" for="val_intake">Year </label>
+                                  	<div class="col-md-3">
+									<select id="year_id" name="year_id" class="select-select2" style="width: 100%;" data-placeholder="Choose one.." required onchange="$('#specialization1 option').remove();loadspecialization1(this.value);">
+								
+																		<option value="1">Year 1</option>
+																		<option value="2">Year 2</option>
+																		<option value="3">Year 3</option>
+										
+									</select>
+									</div>
+							
+									<label class="col-md-2 control-label" for="val_intake">Trimester </label>
+                                  
+													<div class="col-md-3">
+									<select id="sem_id" name="sem_id" class="select-select2" style="width: 100%;" data-placeholder="Choose one.." required onchange="$('#specialization1 option').remove();loadspecialization1(this.value);">
+									
+																		<option value="1">Trimester 1</option>
+																		<option value="2">Trimester 2</option>
+																		<option value="3">Trimester 3</option>
+										
+									</select>
+									</div>
+
+                                    
+                                </div-->
+
+
+                </div>
+                <!-- END Second Step academic info -->
+
+                <!-- Third Step documents-->
+                <div id="clickable-third" class="step">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <ul class="nav nav-pills nav-justified clickable-steps">
+                                <li><a href="javascript:void(0)" data-gotostep="clickable-first"><strong>1. Applicant
+                                            info</strong></a></li>
+                                <li><a href="javascript:void(0)" data-gotostep="clickable-second"><strong>2. Academic
+                                            info</strong></a></li>
+                                <li class="active"><a href="javascript:void(0)"
+                                        data-gotostep="clickable-third"><strong>3. Supporting documents</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END Step Info  -->
+
+
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="val_from">File(s) to Upload <span
+                                class="text-danger">*</span> </label>
+                        <div class="col-md-3"
+                            style='padding: 20px;border-radius: 8px;border: 2px solid #73AD21;margin-top:1%;margin-bottom:1%;'>
+
+                            <p style="font-family: 'Times New Roman', Times, serif;font-size: 12px;font-weight:bold;">
+
+                                <b style="font-size: 12px;">Document(s) to upload: <br />1. A Level
+                                    Certificate/Degree/Diploma,<br />2. School Report for
+                                    S4,S5,S6/Transcript.<br /><br /> <b style="color: red;">Files to upload must be in
+                                        "IMAGE" format.</b></b>
+
+                            </p>
+                        </div>
+
+                        <label class="col-md-2 control-label" for="val_to">Upload File(s) <span
+                                class="text-danger">*</span> </label>
+                        <div class="col-md-3">
+
+                            <input type="file" name="files[]" multiple="" accept="image/*" class="form-control"
+                                required>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="val_from">A Level Certificate/Degree/Diploma Issued
+                            on </label>
+                        <div class="col-md-3">
+                            <input type="date" id="val_from" name="val_from" class="form-control input-datepicker"
+                                data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+                        </div>
+
+                        <label class="col-md-2 control-label" for="val_to">School Report for S4,S5,S6/Transcript Issued
+                            on </label>
+                        <div class="col-md-3">
+                            <input type="date" id="val_to" name="val_to" class="form-control input-datepicker"
+                                data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="val_grade">Grade/Marks</label>
+                        <div class="col-md-3">
+                            <input type="text" id="val_grade" name="val_grade" class="form-control"
+                                placeholder="Grade/Marks.." required>
+                        </div>
+                        <label class="col-md-2 control-label" for="val_institution">Institution <span
+                                class="text-danger">*</span> </label>
+                        <div class="col-md-3">
+                            <select name="val_institution" id="val_institution" class="select-select2"
+                                style="width: 100%;" data-placeholder="Choose one.." required>
+                                <option value=""></option>
+                                                                <option value="3">
+                                    ADB</option>
+                                                                <option value="4">
+                                    APAPE</option>
+                                                                <option value="2">
+                                    GSCC</option>
+                                                                <option value="OTHER">OTHER</option>
+                                                            </select>
+                            <div style="margin-top: 5px;" class="controls" name="sub_cat" id="sub_cat">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="val_country">Country <span
+                                class="text-danger">*</span> </label>
+                        <div class="col-md-3">
+                            <select id="val_country" name="val_country" class="select-select2" style="width: 100%;"
+                                data-placeholder="Choose one.." required>
+                                <option value=""></option>
+                                                                <option value="1">Afghanistan</option>
+
+                                                                <option value="2">Albania</option>
+
+                                                                <option value="3">Algeria</option>
+
+                                                                <option value="4">Samoa (USA)</option>
+
+                                                                <option value="5">Andorra</option>
+
+                                                                <option value="6">Angola</option>
+
+                                                                <option value="7">Aguilla</option>
+
+                                                                <option value="8">Antigua & Barbuda</option>
+
+                                                                <option value="9">Argentina</option>
+
+                                                                <option value="10">Aruba</option>
+
+                                                                <option value="11">Australia</option>
+
+                                                                <option value="12">Austria</option>
+
+                                                                <option value="13">Bahrain</option>
+
+                                                                <option value="14">Barbados</option>
+
+                                                                <option value="15">Burundi</option>
+
+                                                                <option value="16">Belgium</option>
+
+                                                                <option value="17">Benin</option>
+
+                                                                <option value="18">Bermuda</option>
+
+                                                                <option value="19">Bangladesh</option>
+
+                                                                <option value="20">Bahamas</option>
+
+                                                                <option value="21">Bhutan</option>
+
+                                                                <option value="22">Bosnia</option>
+
+                                                                <option value="23">Burkina Faso</option>
+
+                                                                <option value="24">Bolivia</option>
+
+                                                                <option value="25">Botswana</option>
+
+                                                                <option value="26">Brazil</option>
+
+                                                                <option value="27">Brunei Darussalam</option>
+
+                                                                <option value="28">Bulgaria</option>
+
+                                                                <option value="29">Virgin Islands (UK)</option>
+
+                                                                <option value="30">Byelorussian SSR</option>
+
+                                                                <option value="31">Belize</option>
+
+                                                                <option value="33">Cambodia</option>
+
+                                                                <option value="34">Canada</option>
+
+                                                                <option value="35">Central Africa Republic</option>
+
+                                                                <option value="36">Cayman Islands</option>
+
+                                                                <option value="37">Chad</option>
+
+                                                                <option value="38">Chile</option>
+
+                                                                <option value="39">Cook Islands</option>
+
+                                                                <option value="40">Cameroon</option>
+
+                                                                <option value="41">Comoros</option>
+
+                                                                <option value="42">Colombia</option>
+
+                                                                <option value="43">Costa Rica</option>
+
+                                                                <option value="44">China</option>
+
+                                                                <option value="45">Croatia</option>
+
+                                                                <option value="46">Cuba</option>
+
+                                                                <option value="47">Cape Verde</option>
+
+                                                                <option value="48">Cyprus</option>
+
+                                                                <option value="49">Czech Republic</option>
+
+                                                                <option value="50">Denmark</option>
+
+                                                                <option value="51">Djibouti</option>
+
+                                                                <option value="52">Dominica</option>
+
+                                                                <option value="53">Dominican Republic</option>
+
+                                                                <option value="54">Dem Rep Korea</option>
+
+                                                                <option value="55">Ecuador</option>
+
+                                                                <option value="56">Egypt</option>
+
+                                                                <option value="57">El Salvador</option>
+
+                                                                <option value="58">Equatorial Guinea</option>
+
+                                                                <option value="59">Estonia</option>
+
+                                                                <option value="60">Ethiopia</option>
+
+                                                                <option value="61">Antilles (French)</option>
+
+                                                                <option value="62">Guiana (French)</option>
+
+                                                                <option value="63">Fiji</option>
+
+                                                                <option value="64">Finland</option>
+
+                                                                <option value="65">Polynesia (FR)</option>
+
+                                                                <option value="66">France</option>
+
+                                                                <option value="67">Gabon</option>
+
+                                                                <option value="68">Gambia</option>
+
+                                                                <option value="69">Guinea-Bissau</option>
+
+                                                                <option value="70">GEORGIA</option>
+
+                                                                <option value="71">Germany</option>
+
+                                                                <option value="72">Ghana</option>
+
+                                                                <option value="73">Gibraltar</option>
+
+                                                                <option value="74">Global</option>
+
+                                                                <option value="75">Greece</option>
+
+                                                                <option value="76">Grenada</option>
+
+                                                                <option value="77">Guatemala</option>
+
+                                                                <option value="78">Guadeloupe</option>
+
+                                                                <option value="79">Guinea</option>
+
+                                                                <option value="80">Guyana</option>
+
+                                                                <option value="81">Haiti</option>
+
+                                                                <option value="82">Holy See</option>
+
+                                                                <option value="83">Hong Kong</option>
+
+                                                                <option value="84">Honduras</option>
+
+                                                                <option value="85">Hungary</option>
+
+                                                                <option value="86">Iceland</option>
+
+                                                                <option value="87">India</option>
+
+                                                                <option value="88">Indonesia</option>
+
+                                                                <option value="89">Iran</option>
+
+                                                                <option value="90">Ireland</option>
+
+                                                                <option value="91">Iraq</option>
+
+                                                                <option value="92">Israel</option>
+
+                                                                <option value="93">Italy</option>
+
+                                                                <option value="94">Ivory Coast</option>
+
+                                                                <option value="96">Jamaica</option>
+
+                                                                <option value="97">Jordan</option>
+
+                                                                <option value="98">Japan</option>
+
+                                                                <option value="99">Kenya</option>
+
+                                                                <option value="100">Kiribati</option>
+
+                                                                <option value="101">Kuwait</option>
+
+                                                                <option value="102">Kyrgyzstan</option>
+
+                                                                <option value="103">Lao People's Dem Rep</option>
+
+                                                                <option value="104">Latvia</option>
+
+                                                                <option value="105">Lebanon</option>
+
+                                                                <option value="106">Lesotho</option>
+
+                                                                <option value="107">Libyan Arab Jamahiriya</option>
+
+                                                                <option value="108">Liechtenstein</option>
+
+                                                                <option value="109">Liberia</option>
+
+                                                                <option value="110">Lithuania</option>
+
+                                                                <option value="111">Luxembourg</option>
+
+                                                                <option value="112">Macao</option>
+
+                                                                <option value="113">Madagascar</option>
+
+                                                                <option value="114">Malaysia</option>
+
+                                                                <option value="115">Martinique</option>
+
+                                                                <option value="116">Mauritius</option>
+
+                                                                <option value="117">Marshall Islands</option>
+
+                                                                <option value="118">Malta</option>
+
+                                                                <option value="119">Mauritania</option>
+
+                                                                <option value="120">Maldives</option>
+
+                                                                <option value="121">Mexico</option>
+
+                                                                <option value="122">Micronesia</option>
+
+                                                                <option value="123">Mali</option>
+
+                                                                <option value="124">Malawi</option>
+
+                                                                <option value="125">Monaco</option>
+
+                                                                <option value="126">Mongolia</option>
+
+                                                                <option value="127">Morocco</option>
+
+                                                                <option value="128">Montserrat</option>
+
+                                                                <option value="129">Mozambique</option>
+
+                                                                <option value="130">Myanmar</option>
+
+                                                                <option value="131">Namibia</option>
+
+                                                                <option value="132">Antilles (Neth)</option>
+
+                                                                <option value="133">Nauru</option>
+
+                                                                <option value="134">New Caledonia</option>
+
+                                                                <option value="135">Nepal</option>
+
+                                                                <option value="136">Niger</option>
+
+                                                                <option value="137">Netherlands</option>
+
+                                                                <option value="138">Nicaragua</option>
+
+                                                                <option value="139">Nigeria</option>
+
+                                                                <option value="140">Niue</option>
+
+                                                                <option value="141">Norway</option>
+
+                                                                <option value="142">New Zealand</option>
+
+                                                                <option value="143">Oman</option>
+
+                                                                <option value="144">Pakistan</option>
+
+                                                                <option value="145">Palau</option>
+
+                                                                <option value="146">Panama</option>
+
+                                                                <option value="147">Paraguay</option>
+
+                                                                <option value="148">Peru</option>
+
+                                                                <option value="149">Philippines</option>
+
+                                                                <option value="150">Papua New Guinea</option>
+
+                                                                <option value="151">Poland</option>
+
+                                                                <option value="152">Portugal</option>
+
+                                                                <option value="153">Congo</option>
+
+                                                                <option value="154">Puerto Rico</option>
+
+                                                                <option value="155">Qatar</option>
+
+                                                                <option value="156">Reunion</option>
+
+                                                                <option value="157">Rep of Korea</option>
+
+                                                                <option value="158">Romania</option>
+
+                                                                <option value="159">Russian Federation</option>
+
+                                                                <option value="160">Rwanda</option>
+
+                                                                <option value="161">South Africa</option>
+
+                                                                <option value="162">Samoa</option>
+
+                                                                <option value="163">Saudi Arabia</option>
+
+                                                                <option value="164">Senegal</option>
+
+                                                                <option value="165">Seychelles</option>
+
+                                                                <option value="166">Sikkim</option>
+
+                                                                <option value="167">Sierra Leone</option>
+
+                                                                <option value="168">Singapore</option>
+
+                                                                <option value="169">Slovenia</option>
+
+                                                                <option value="170">San Marino</option>
+
+                                                                <option value="171">Solomon Islands</option>
+
+                                                                <option value="172">Somalia</option>
+
+                                                                <option value="173">Spain</option>
+
+                                                                <option value="174">Sri Lanka</option>
+
+                                                                <option value="175">Stateless</option>
+
+                                                                <option value="176">St. Helena</option>
+
+                                                                <option value="177">St. Christopher & Nevis</option>
+
+                                                                <option value="178">St. Lucia</option>
+
+                                                                <option value="179">Sao Tome & Principe</option>
+
+                                                                <option value="180">St. Vincent/Grenadines</option>
+
+                                                                <option value="181">Sudan</option>
+
+                                                                <option value="182">Switzerland</option>
+
+                                                                <option value="183">Suriname</option>
+
+                                                                <option value="184">Swaziland</option>
+
+                                                                <option value="185">Sweden</option>
+
+                                                                <option value="186">Syrian Arab Rep</option>
+
+                                                                <option value="187">TaiwaN</option>
+
+                                                                <option value="188">Tajikistan</option>
+
+                                                                <option value="189">Tanzania</option>
+
+                                                                <option value="190">Turks & Caicos Islands</option>
+
+                                                                <option value="191">Thailand</option>
+
+                                                                <option value="192">East Timor</option>
+
+                                                                <option value="193">Timor Leste</option>
+
+                                                                <option value="194">Togo</option>
+
+                                                                <option value="195">Tokelau Islands</option>
+
+                                                                <option value="196">Tonga</option>
+
+                                                                <option value="197">Trinidad & Tobago</option>
+
+                                                                <option value="198">T T Pacific Islands</option>
+
+                                                                <option value="199">Tunisia</option>
+
+                                                                <option value="200">Turkey</option>
+
+                                                                <option value="201">Tuvalu</option>
+
+                                                                <option value="202">United Arab Emirates</option>
+
+                                                                <option value="203">Uganda</option>
+
+                                                                <option value="204">United Kingdom</option>
+
+                                                                <option value="205">Ukraine</option>
+
+                                                                <option value="206">United Rep Tanzania</option>
+
+                                                                <option value="207">Uruguay</option>
+
+                                                                <option value="208">USA</option>
+
+                                                                <option value="210">Virgin Islands (US)</option>
+
+                                                                <option value="211">Vanuatu</option>
+
+                                                                <option value="212">Venezuela</option>
+
+                                                                <option value="213">Viet Nam</option>
+
+                                                                <option value="214">Wallis & Futuna Islands</option>
+
+                                                                <option value="215">Irian Jaya (West Irian)</option>
+
+                                                                <option value="216">Yemen</option>
+
+                                                                <option value="217">Yugoslavia</option>
+
+                                                                <option value="219">Zambia</option>
+
+                                                                <option value="220">Zimbabwe</option>
+
+                                                            </select>
+                        </div>
+                        <label class="col-md-2 control-label" for="sponsor">Sponsor <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-3">
+                            <select id="sponsor" name="sponsor" class="select-select2" style="width: 100%;"
+                                data-placeholder="Choose one.." required>
+                                <option value=""></option>
+                                                                <option value="1">FARG                                </option>
+                                                                <option value="2">SELF                                </option>
+                                                                <option value="3">Parent                                </option>
+                                                                <option value="4">MAISON SHALOM                                </option>
+                                                                <option value="5">UYISENGA NIMANAZI                                </option>
+                                                                <option value="6">Demobilization                                </option>
+                                                                <option value="7">ADRA - RWANDA                                </option>
+                                                                <option value="8">BRALIRWA                                </option>
+                                                                <option value="9">REB                                </option>
+                                                                <option value="10">SOS                                </option>
+                                                                <option value="11">UTB                                </option>
+                                                                <option value="12">ZULFAT FOUNDATION                                </option>
+                                                                <option value="13">Fondazione                                </option>
+                                                                <option value="14">FAWE-RWANDA                                </option>
+                                                                <option value="15">UNHCR/DAFI                                </option>
+                                                                <option value="16">BAKARERE                                </option>
+                                                                <option value="17">African Blessings                                </option>
+                                                                <option value="18">Point Foundation                                </option>
+                                                                <option value="19">Foot steps                                </option>
+                                                                <option value="20">Compassion International                                </option>
+                                                                <option value="21">NEW LIFE                                </option>
+                                                                <option value="22">DIRECT AID                                </option>
+                                                            </select>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--<div class="form-group">
+                	<label class="col-md-2 control-label" for="sponsor">Apply for<span class="text-danger">*</span> </label>
+                    <div class="col-md-3">
+                        <select id="apply_for" name="apply_for" class="select-select2" style="width: 100%;" data-placeholder="Choose one.." required >
+                            <option value=""></option>
+                            
+                                    <option value="1">Advanced diploma</option>
+                                     
+                        </select>
+                    </div>
+                </div>-->
+                </div>
+                <!-- END third Step documents -->
+
+                <!-- Form Buttons -->
+                <div class="form-group form-actions">
+                    <div class="col-md-8 col-md-offset-2">
+                        <input type="reset" class="btn btn-sm btn-warning" id="back2" value="Back">
+                        <input type="submit" class="btn btn-sm btn-primary" id="next2" value="Next">
+                        <div class="col-md-4"><span id="load"></span></div>
+                    </div>
+                </div>
+                <!-- END Form Buttons -->
+                <br />
+            </form>
+
+            <div id="AplctnDisplay" class="col-md-12"></div>
+
+            <!--
+		<center>
+		<b class="form-group col-lg-12" style="color:red;font-size:17px;margin-top:2%;">
+		Fields with * are required.
+		</b>
+		</center>
+		!-->
+
+
+        </div>
+        <!-- END form with Validation Content -->
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="site-footer site-section" style="background-color:#006620;">
+
+    <div class="container">
+
+        <!-- Footer Links -->
+        <div class="row">
+            <div class="col-sm-6 col-md-2" align="left">
+                <ul class="footer-nav list-inline">
+                    <li> <b>&copy; 2023</b></li>
+                    <li><a href="http://www.utb.ac.rw/" target="_blank"><i class="fa fa-globe"></i><b>&nbsp;&nbsp;web:
+                                utb.ac.rw</b></a></li>
+                    <!--<li><a href="FAQ.php">Support</a></li>-->
+                </ul>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-2">
+                <ul class="footer-nav list-inline">
+
+                    <li><a href="https://elearning.utb.ac.rw/" target="_blank"><i
+                                class="fa fa-book"></i><b>&nbsp;&nbsp;E-Learning: elearning.utb.ac.rw</b></a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-4">
+                <ul class="footer-nav list-inline">
+                    <li><i class="fa fa-phone"></i><b>&nbsp;&nbsp;KIGALI : +250 788 320 688 &nbsp;|&nbsp; +250 788 320
+                            588</b><br />
+                        <i class="fa fa-phone"></i><b>&nbsp;&nbsp;RUBAVU : +250 788 320 575 </b>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
+                <ul class="footer-nav list-inline">
+                    <li><b>&nbsp;&nbsp;System-Support:
+                            </b><br />
+                        <i class="fa fa-phone"></i><b>&nbsp;&nbsp; +250 788 315 351 &nbsp;|&nbsp; +250 788 940 718</b>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!-- END Footer Links -->
+    </div>
+</footer>
+<!-- END Footer -->
+
+
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-up"></i></a>
+<!-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) -->
+<!--<script src="js/vendor/1.11.1/jquery.min.js"></script>!-->
+<script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
+
+<!-- Bootstrap.js, Jquery plugins and Custom JS code -->
+<script src="https://mis.utb.ac.rw/js/vendor/bootstrap.min.js"></script>
+
+<script src="https://mis.utb.ac.rw/backend/js/plugins.js"></script>
+<script src="https://mis.utb.ac.rw/backend/js/app.js"></script>
+
+
+
+
+
+    </body>
+	
+
+<!-- Mirrored from mis.utb.ac.rw/application_ug.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 May 2023 08:47:39 GMT -->
+</html><!--
+<script>
+  $(function(){
+	//insert record
+	//RgsUsr,userPhone,levelID
+	$('#next4').click(function(){
+		//val_family_name,sex,val_first_name,phone,date_of_birth,email,val_major,PrgType,val_intake,splz,val_level,val_prog_opt1,campus,val_prog_opt2,mode,val_from,val_to,val_grade,val_institution,val_country,sponsor,
+		
+		var val_family_name = $("#val_family_name").val();
+		var post_ID = $("#post_ID").val();
+		var paidShares = $("#paidShares").val();
+		var amntPd = $("#amntPd").val();
+		var PymMethd_ID = $("#PymMethd_ID").val();		
+		var frsName = $("#frsName").val();
+		var fmNme = $("#fmNme").val();
+		var Eml = $("#Eml").val();
+		var card_number = $("#card_number").val();
+		var expdate_month = $("#expdate_month").val();
+		var expdate_year = $("#expdate_year").val();
+		var cvv2_number = $("#cvv2_number").val();
+		var my_wallet = $("#my_wallet").val();
+		var mtn_number = $("#mtn_number").val();
+		
+		if(val_family_name == "")
+		{
+		$('#info3').fadeIn('slow').delay(6000).fadeOut('slow');
+		}
+		
+		else if(paidShares == "")
+		{
+		$('#info4').fadeIn('slow').delay(6000).fadeOut('slow');
+		}
+		
+		else if(PymMethd_ID == "")
+		{
+		$('#info5').fadeIn('slow').delay(6000).fadeOut('slow');
+		}
+		
+		else if(amntPd == "")
+		{
+		$('#info6').fadeIn('slow').delay(6000).fadeOut('slow');
+		}
+		
+		else if(User_ID == "")
+		{
+		$('#info7').fadeIn('slow').delay(6000).fadeOut('slow');
+		}
+										
+		
+	 
+	});
+	
+  });
+</script>
+!-->
+
+
+
+
+
+
+<script src="https://mis.utb.ac.rw/backend/js/pages/formsWizard.js"></script>
+<script>
+$(function() {
+    FormsWizard.init();
+});
+</script>
+
+<script>
+var keepformdata = null;
+$(document).ready(function() {
+    $("#advanced-wizard").submit(function(e) {
+        e.preventDefault();
+        var formdata = new FormData(this);
+        keepformdata = $(this).serialize();
+        $('#loaded').hide();
+        $('#load').html("<img src='img/ldng_5.gif' width='50'>").fadeIn('fast');
+        $.ajax({
+            url: "LoadAplctnDtls.php",
+            type: "POST",
+            data: formdata,
+            mimeTypes: "multipart/form-data",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(formData) {
+                $('#load').fadeOut('fast');
+                $("#AplctnDisplay").html(formData);
+                //$('#printsinglepdf').show();
+            },
+            error: function() {
+                alert("okey");
+            }
+        });
+    });
+
+
+
+});
+</script>

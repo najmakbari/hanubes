@@ -1,0 +1,445 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    
+<!-- Mirrored from mis.utb.ac.rw/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 May 2023 08:47:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8">
+
+        <title>UTBMIS</title>
+
+        <meta name="description" content="UTB MIS">
+        <meta name="author" content="">
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="https://mis.utb.ac.rw/img/icon57.png">
+
+        <!-- END Icons -->
+
+        <!-- Stylesheets -->
+        <!-- Bootstrap is included in its original form, unaltered -->
+        <link rel="stylesheet" href="https://mis.utb.ac.rw/css/bootstrap.min.css">
+
+        <!-- Related styles of various icon packs and plugins -->
+		<!--        <link rel="stylesheet" href="css_back/plugins.css">-->
+		<link rel="stylesheet" href="https://mis.utb.ac.rw/backend/css/plugins.css">
+
+        <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+        <link rel="stylesheet" href="https://mis.utb.ac.rw/css/main.css?1.0">
+
+        <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+        <link rel="stylesheet" href="https://mis.utb.ac.rw/css/themes.css">
+        <!-- END Stylesheets -->
+
+        <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
+        <!--<script src="js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>!-->
+    </head>
+    <body><!-- Page Container -->
+<!-- In the PHP version you can set the following options from inc/config file -->
+<!-- 'boxed' class for a boxed layout -->
+<div id="page-container" >
+    <!-- Site Header -->
+    <header style="background-color:#006620;">
+        <div class="container">
+            <!-- Site Logo -->
+            <a href="https://mis.utb.ac.rw/" class="site-logo">
+                <i class="gi"><img src="https://mis.utb.ac.rw/img/logo_ok.png" /></i>&nbsp;&nbsp;
+                <strong>MIS</strong>
+            </a>
+
+
+            <!-- Site Navigation -->
+            <nav>
+                <!-- Menu Toggle -->
+                <!-- Toggles menu on small screens -->
+                <a href="javascript:void(0)" class="btn btn-default site-menu-toggle visible-xs visible-sm">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- END Menu Toggle -->
+
+                <!-- Main Menu -->
+                                <ul class="site-nav">
+                    <!-- Toggles menu on small screens -->
+                    <li class="visible-xs visible-sm">
+                        <a href="javascript:void(0)" class="site-menu-toggle text-center">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </li>
+                    <!-- END Menu Toggle -->
+                                        <li>
+                        <a href="https://mis.utb.ac.rw/index.php" ><span class="fa fa-home"></span> Home</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/application_ug.php" ><span class="fa fa-graduation-cap"></span> Student Application</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/tracking.php" ><span class="fa fa-user"></span> Tracking</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/SdntEntrc.php" ><span class="fa fa-share"></span> Student Entrance</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/login.php"  class="active"><span class="fa fa-lock"></span> Login</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/vtp" ><span class="fa fa-lock"></span> VTP-Login</a>
+                                                </li>
+                                            <li>
+                        <a href="javascript:void(0)" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                </li>
+                                            <li>
+                        <a href="https://mis.utb.ac.rw/graduants.php" >List of Graduands</a>
+                                                </li>
+                                        </ul>
+                                <!-- END Main Menu -->
+            </nav>
+            <!-- END Site Navigation -->
+        </div>
+    </header>
+    <!-- END Site Header --><style type="text/css">
+	@keyframes blink {
+  0% { background-color: #d461fa; }
+  50% { background-color: #001aff; }
+  100% { background-color: #9fe356; }
+}
+
+.blinking-button {
+  animation: blink 1s infinite;
+  font-weight: bolder;
+}
+</style>
+
+<section class="site-section-light" id="Sectn">
+
+    <div class="container">
+        <h3 class="text-center animation-slideDown"><strong>
+                <b>
+                    <i class="fa fa-user"></i> Login
+                </b>
+            </strong></h3>
+
+    </div>
+</section>
+
+<div class="loginHolder">
+    <section class="site-content">
+        <div class="container">
+            <div class="row" style="justify-content:stretch;">
+
+                <div class="col-md-6 logForm">
+                    <div class="col-md-12 login-container">
+                        <div id="login-container">
+                        <h2>LOGIN</h2>
+
+                            <!-- Login Block -->
+                            <div class="block push-bit">
+                                <!-- Login Form -->
+                                <form action="https://mis.utb.ac.rw/login_user.php" method="post" id="form-login"
+                                    class="form-horizontal form-control-borderless">
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                                <input type="text" id="login-email" name="login-email"
+                                                    class="form-control input-lg" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="gi gi-lock"></i></span>
+                                                <input type="password" id="login-password" name="login-password"
+                                                    class="form-control input-lg" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-primary" type="submit" id=""><b><i
+                                                class="fa fa-user"></i>&nbsp;&nbsp; Login to UTB
+                                            MIS</b></button>
+                                    <a style="float:right;font-weight: bolder" target="_blank" class="btn btn-info blinking-button" href="https://mis.utb.ac.rw/graduants.php" id=""><b><i
+                                                class="fa fa-user"></i>&nbsp;&nbsp; Graduands List</b></a>
+
+                                    <center>
+                                        <b>
+                                            Don't have account or Password is forgotten ? Please contact ICT Office </b>
+                                    </center>
+
+                                </form>
+
+                                <!-- END Login Form -->
+
+                                <!-- END Reminder Form -->
+                                <style>
+                                @-webkit-keyframes blinker {
+                                    from {
+                                        opacity: 1.0;
+                                    }
+
+                                    to {
+                                        opacity: 0.0;
+                                    }
+                                }
+
+                                @keyframes blinker {
+                                    from {
+                                        opacity: 1.0;
+                                    }
+
+                                    to {
+                                        opacity: 0.0;
+                                    }
+                                }
+
+                                #loading {
+                                    color: red;
+                                    font-weight: bold;
+                                    font-size: 10px;
+                                    letter-spacing: 2px;
+                                    text-decoration: blink;
+                                    -webkit-animation-name: blinker;
+                                    animation-name: blinker;
+                                    -webkit-animation-iteration-count: infinite;
+                                    animation-iteration-count: infinite;
+                                    -webkit-animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+                                    animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+                                    -webkit-animation-duration: 1s;
+                                    animation-duration: 1s;
+                                }
+
+                                #loaded {
+                                    color: green;
+                                    font-weight: bold;
+                                    font-size: 10px;
+                                    letter-spacing: 2px;
+                                }
+
+                                </style>
+                            </div>
+                            <!-- END Login Block -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="annc col-md-12">
+                        <h2>STUDENT ANNOUNCEMENTS</h2>
+                            <ol>
+                                <li><b>How to register to student module</b><a href="https://mis.utb.ac.rw/announces/HOW TO REGISTER ON MY MODULE.pdf" target="_blank">
+                                <img src="https://mis.utb.ac.rw/img/pdf_icon_copy.png" />
+                            </a></li>
+                                <li><b>How to check student finance balance</b><a href="https://mis.utb.ac.rw/announces/HOW TO CHECK YOUR FINANCE BALANCE.pdf" target="_blank">
+                                <img src="https://mis.utb.ac.rw/img/pdf_icon_copy.png" />
+                            </a></li>
+                                <li><b>How to Update student passport photo</b><a href="https://mis.utb.ac.rw/announces/HOW TO CHECK YOUR FINANCE BALANCE.pdf" target="_blank">
+                                <img src="https://mis.utb.ac.rw/img/pdf_icon_copy.png" />
+                            </a></li>
+                            </ol>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Modal Terms -->
+                <div id="modal-terms" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">UMIS Terms &amp; Conditions</h4>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Welcome to IMIS</h4>
+                                <p>Thanks for using our products and services ("Services"). The Services are provided by
+                                    UTB
+                                </p>
+
+                                <p>By using our Services, you are agreeing to these terms. Please read them carefully.
+                                </p>
+
+                                <p>Our Services are very diverse, so sometimes additional terms or product requirements
+                                    (including age requirements) may apply. Additional terms will be available with the
+                                    relevant Services, and those additional terms become part of your agreement with us
+                                    if
+                                    you use those Services</p>
+
+                                <h4>Using our Services</h4>
+
+                                <p>You must follow any policies made available to you within the Services.</p>
+
+                                <p>Don't misuse our Services. For example, don't interfere with our Services or try to
+                                    access them using a method other than the interface and the instructions that we
+                                    provide. You may use our Services only as permitted by law, including applicable
+                                    export
+                                    and re-export control laws and regulations. We may suspend or stop providing our
+                                    Services to you if you do not comply with our terms or policies or if we are
+                                    investigating suspected misconduct.</p>
+
+                                <p>Using our Services does not give you ownership of any intellectual property rights in
+                                    our
+                                    Services or the content you access. You may not use content from our Services unless
+                                    you
+                                    obtain permission from its owner or are otherwise permitted by law. These terms do
+                                    not
+                                    grant you the right to use any branding or logos used in our Services. Don't remove,
+                                    obscure, or alter any legal notices displayed in or along with our Services.</p>
+
+                                <p>In connection with your use of the Services, we may send you service announcements,
+                                    administrative messages, and other information. You may opt out of some of those
+                                    communications.</p>
+
+                                <p>Some of our Services are available on mobile devices. Do not use such Services in a
+                                    way
+                                    that distracts you and prevents you from obeying traffic or safety laws.</p>
+
+                                <h4>About these Terms</h4>
+                                <p>We may modify these terms or any additional terms that apply to a Service to, for
+                                    example, reflect changes to the law or changes to our Services. You should look at
+                                    the
+                                    terms regularly. We'll post notice of modifications to these terms on this page.
+                                    We'll
+                                    post notice of modified additional terms in the applicable Service. Changes will not
+                                    apply retroactively and will become effective no sooner than fourteen days after
+                                    they
+                                    are posted. However, changes addressing new functions for a Service or changes made
+                                    for
+                                    legal reasons will be effective immediately. If you do not agree to the modified
+                                    terms
+                                    for a Service, you should discontinue your use of that Service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Modal Terms -->
+            </div>
+            <br><br>
+        </div>
+
+    </section>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="site-footer site-section" style="background-color:#006620;">
+
+    <div class="container">
+
+        <!-- Footer Links -->
+        <div class="row">
+            <div class="col-sm-6 col-md-2" align="left">
+                <ul class="footer-nav list-inline">
+                    <li> <b>&copy; 2023</b></li>
+                    <li><a href="http://www.utb.ac.rw/" target="_blank"><i class="fa fa-globe"></i><b>&nbsp;&nbsp;web:
+                                utb.ac.rw</b></a></li>
+                    <!--<li><a href="FAQ.php">Support</a></li>-->
+                </ul>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-2">
+                <ul class="footer-nav list-inline">
+
+                    <li><a href="https://elearning.utb.ac.rw/" target="_blank"><i
+                                class="fa fa-book"></i><b>&nbsp;&nbsp;E-Learning: elearning.utb.ac.rw</b></a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-4">
+                <ul class="footer-nav list-inline">
+                    <li><i class="fa fa-phone"></i><b>&nbsp;&nbsp;KIGALI : +250 788 320 688 &nbsp;|&nbsp; +250 788 320
+                            588</b><br />
+                        <i class="fa fa-phone"></i><b>&nbsp;&nbsp;RUBAVU : +250 788 320 575 </b>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
+                <ul class="footer-nav list-inline">
+                    <li><b>&nbsp;&nbsp;System-Support:
+                            </b><br />
+                        <i class="fa fa-phone"></i><b>&nbsp;&nbsp; +250 788 315 351 &nbsp;|&nbsp; +250 788 940 718</b>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!-- END Footer Links -->
+    </div>
+</footer>
+<!-- END Footer -->
+
+
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-up"></i></a>
+<!-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) -->
+<!--<script src="js/vendor/1.11.1/jquery.min.js"></script>!-->
+<script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
+
+<!-- Bootstrap.js, Jquery plugins and Custom JS code -->
+<script src="https://mis.utb.ac.rw/js/vendor/bootstrap.min.js"></script>
+
+<script src="https://mis.utb.ac.rw/backend/js/plugins.js"></script>
+<script src="https://mis.utb.ac.rw/backend/js/app.js"></script>
+
+<!-- Load and execute javascript code used only in this page -->
+<script src="https://mis.utb.ac.rw/js/pages/login.js"></script>
+<script>
+$(function() {
+    Login.init();
+});
+</script>
+
+    </body>
+	
+
+<!-- Mirrored from mis.utb.ac.rw/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 May 2023 08:47:39 GMT -->
+</html>
+<script>
+function loadprofile(id) {
+    //alert(id);
+    $('#loaded').hide();
+    $('#loading').html("Loading").fadeIn('fast');
+
+    $.post("https://mis.utb.ac.rw/load_profile.php", {
+        id: id
+    }, function(data) {
+        //alert(data);
+        $("#register-profile option").remove();
+        //$("#branch").append(new Option("Select Intake",""));
+        data = data.replace("{", "");
+        data = data.replace("}", "");
+        //alert(data);
+        var profiles = data.split("*");
+        for (var i = 0; i < profiles.length; i++) {
+            var profile = profiles[i].split("=");
+            var profile_id = profile[0];
+            var profile_name = profile[1];
+            //alert(name+id);
+            $("#register-profile").append(new Option(profile_name, profile_id));
+            $('#loading').hide();
+            $('#loaded').html("Loaded");
+            $('#loaded').show();
+        }
+    });
+
+}
+</script>
+
