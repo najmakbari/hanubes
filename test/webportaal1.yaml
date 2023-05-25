@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webportaal1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webp1
+  template:
+    metadata:
+      labels:
+        app: webp1
+    spec:
+      containers:
+      - name: my-container
+        image: 192.168.2.6:5000//test:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webportaal1-service
+spec:
+  selector:
+    app: webp1
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
